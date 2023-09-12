@@ -9,7 +9,7 @@ jobs:
     runs-on: self-hosted
     strategy:
       matrix:
-        node-version: [16.13.1]
+        node-version: [18.x]
     steps:
     - uses: actions/checkout@v3
     - name: Use Node.js ${{ matrix.node-version }}
@@ -18,4 +18,4 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: pm2 restart backendserver
+    - run: pm2 restart BackendAPI
